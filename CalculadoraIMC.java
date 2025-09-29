@@ -1,6 +1,6 @@
 public class CalculadoraIMC {
 
-    public static String classificarIMC(double imc, String genero) {
+    public static String classificaIMC(double imc, String genero) {
         if (genero.equalsIgnoreCase("mulher")) {
             if (imc < 19.1) {
                 return "Abaixo do peso";
@@ -26,30 +26,47 @@ public class CalculadoraIMC {
                 return "Obeso";
             }
         } else {
-            return "Erro: Genero invalido";
+            return "Erro: Genero inválido";
         }
     }
 
     public static void main(String[] args) {
  
  
-        double peso = 80.0;
-        double altura = 1.75;
-        String genero = "Homem";
-        
-        //double peso = 75.3;
-        //double altura = 1.69;
-        //String genero = "mulher";
-        
-        //String genero = "inválido";
+        double peso1 = 80.0;
+        double altura1 = 1.75;
+        String genero1 = "Homem";
 
-        double imc = peso / (altura * altura);
-        String condicao = classificarIMC(imc, genero);
+        double imc1 = peso1 / (altura1 * altura1);
+        String condicao1 = classificaIMC(imc1, genero1);
 
-        System.out.println("---------------------------------------");
-        System.out.println("Calculando IMC para: "+ genero);
-        System.out.printf("Seu IMC é: %.2f\n", imc);
-        System.out.println("Condicao: " + condicao);
-        System.out.println("---------------------------------------");
+        System.out.println("");
+        System.out.println("Tipo: " + genero1);
+        System.out.printf("Valor do IMC: %.2f\n", imc1);
+        System.out.println("Condição: " + condicao1);
+        System.out.println("");
+        
+  
+        double peso2 = 75.3;
+        double altura2 = 1.69;
+        String genero2 = "mulher";
+        
+        double imc2 = peso2 / (altura2 * altura2);
+        String condicao2 = classificaIMC(imc2, genero2);
+
+        System.out.println("");
+        System.out.println("Tipo: " + genero2);
+        System.out.printf("Valor do IMC: %.2f\n", imc2);
+        System.out.println("Condição: " + condicao2);
+        System.out.println("");
+        
+    
+        String genero3 = "inválido";
+        String condicao3 = classificaIMC(0.0, genero3);
+        
+        System.out.println("");
+        System.out.println("Tipo: " + genero3);
+        System.out.println("Condição: " + condicao3);
+        System.out.println("");
     }
 }
